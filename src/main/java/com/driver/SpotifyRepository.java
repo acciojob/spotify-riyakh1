@@ -38,6 +38,9 @@ public class SpotifyRepository {
     }
 
     public User createUser(String name, String mobile) {
+        User newUser = new User(name,mobile);
+        users.add(newUser);
+        return newUser;
     }
 
     public Artist createArtist(String name) {
