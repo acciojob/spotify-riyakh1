@@ -36,7 +36,7 @@ public class SpotifyService {
     }
 
     public Playlist findPlaylist(String mobile, String playlistTitle) throws Exception {
-
+        return spotifyRepository.findPlaylist(mobile,playlistTitle);
     }
 
     public Song likeSong(String mobile, String songTitle) throws Exception {

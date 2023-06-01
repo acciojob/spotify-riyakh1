@@ -66,7 +66,7 @@ public class SpotifyController {
         //If the user does not exist, throw "User does not exist" exception
         //If the playlist does not exists, throw "Playlist does not exist" exception
         // Return the playlist after updating
-
+        spotifyService.findPlaylist(mobile, playlistTitle);
         return "Success";
     }
 
