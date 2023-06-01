@@ -356,21 +356,6 @@ public class SpotifyRepository {
                 return artist1.getName();
         }
 
-        public String mostPopularSong() {
-            int max = 0;
-            Song song = null;
-
-            for (Song song1 : songLikeMap.keySet()) {
-                if (song1.getLikes() >= max) {
-                    song = song1;
-                    max = song1.getLikes();
-                }
-            }
-            if (song == null)
-                return null;
-            else
-                return song.getTitle();
-        }
     }
 
     public String mostPopularSong() {
