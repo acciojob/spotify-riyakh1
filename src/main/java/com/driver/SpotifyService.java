@@ -24,7 +24,7 @@ public class SpotifyService {
     }
 
     public Song createSong(String title, String albumName, int length) throws Exception {
-
+        return spotifyRepository.createSong(title,albumName,length);
     }
 
     public Playlist createPlaylistOnLength(String mobile, String title, int length) throws Exception {

@@ -37,7 +37,7 @@ public class SpotifyController {
     public String createSong(String title, String albumName, int length) throws Exception{
         //If the album does not exist in database, throw "Album does not exist" exception
         //Create and add the song to respective album
-
+        spotifyService.createSong(title,albumName,length);
         return "Success";
     }
 
