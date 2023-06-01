@@ -51,6 +51,12 @@ public class SpotifyRepository {
     }
 
     public Album createAlbum(String title, String artistName) {
+        Artist artist1 = null;
+        for(Artist artist : artists) {
+            if (Objects.equals(artist.getName(), artistName)) {
+                artist1 = artist;
+                break;
+            }
     }
 
     public Song createSong(String title, String albumName, int length) throws Exception{
