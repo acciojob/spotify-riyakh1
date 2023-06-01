@@ -44,6 +44,10 @@ public class SpotifyRepository {
     }
 
     public Artist createArtist(String name) {
+        Artist newArtist = new Artist(name);
+        newArtist.setLikes(0);
+        artists.add(newArtist);
+        return newArtist;
     }
 
     public Album createAlbum(String title, String artistName) {

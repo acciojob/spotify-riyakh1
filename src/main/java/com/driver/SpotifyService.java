@@ -16,7 +16,7 @@ public class SpotifyService {
     }
 
     public Artist createArtist(String name) {
-
+        return spotifyRepository.createArtist(name);
     }
 
     public Album createAlbum(String title, String artistName) {
