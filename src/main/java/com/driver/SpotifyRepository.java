@@ -168,7 +168,49 @@ public class SpotifyRepository {
     }
 
     public Playlist createPlaylistOnName(String mobile, String title, List<String> songTitles) throws Exception {
+        User user = null;
+        for(User user1 : users){
+            if(user1.getMobile() == mobile){
+                user = user1;
+                break;
+            }
+        }
 
+        if(user == null){
+            throw new Exception("User does not exist");
+        }
+        else{
+            Playlist playlist = new Playlist();
+            playlist.setTitle(title);
+            playlists.add(playlist);
+
+            List<Song> list = new ArrayList<>();
+            for(Song song : songs){
+                if(songTitles.contains(song.getTitle())){
+                    list.add(song);
+                }
+            }
+            playlistSongMap.put(playlist ,list);
+
+            List<User> list1 = new ArrayList<>();
+            list1.add(user);
+            playlistListenerMap.put(playlist,list1);
+
+            creatorPlaylistMap.put(user,playlist);
+
+
+            if(userPlaylistMap.containsKey(user)){
+                List<Playlist> userPlayList = userPlaylistMap.get(user);
+                userPlayList.add(playlist);
+                userPlaylistMap.put(user,userPlayList);
+            }else{
+                List<Playlist> plays = new ArrayList<>();
+                plays.add(playlist);
+                userPlaylistMap.put(user,plays);
+            }
+
+            return playlist;
+        }
     }
 
     public Playlist findPlaylist(String mobile, String playlistTitle) throws Exception {

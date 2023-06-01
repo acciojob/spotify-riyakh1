@@ -55,7 +55,7 @@ public class SpotifyController {
         //Create a playlist with given title and add all songs having the given titles in the database to that playlist
         //The creater of the playlist will be the given user and will also be the only listener at the time of playlist creation
         //If the user does not exist, throw "User does not exist" exception
-
+        spotifyService.createPlaylistOnName(mobile, title, songTitles);
         return "Success";
     }
 
